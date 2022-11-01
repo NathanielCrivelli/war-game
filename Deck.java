@@ -69,7 +69,8 @@ public class Deck
      * @returns The top card of the deck (at cards index 0)
      */
     public Card dealCardFromDeck() {
-        // To be written 
+        // To be written
+        
         return null;
     }
     
@@ -78,7 +79,7 @@ public class Deck
      * @param cardToAdd: Card to add to this deck
      */
     public void addCardToDeck(Card cardToAdd) {
-        // To be written
+        if(halves[0] > 
     }
     
 }
