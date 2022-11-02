@@ -79,7 +79,6 @@ public class Deck
      * @param cardToAdd: Card to add to this deck
      */
     public void addCardToDeck(Card cardToAdd) {
-        if(halves[0] > 
+        this.cards.get(0);
     }
-    
 }
