@@ -15,6 +15,12 @@ public class War
     public War()
     {
         // Initializations here...
+        Deck deck = new Deck();
+        deck.initializeNewDeck();
+        deck.shuffle();
+        Deck[] halves = deck.dealDeck();
+        Deck player1 = halves[0];
+        Deck player2 = halves[1];
         
         
         // ...then run the event loop
@@ -26,7 +32,7 @@ public class War
      * from the War flowchart you created for this game
      */
     public void runEventLoop() {
-
+        
     }
     
     /**
