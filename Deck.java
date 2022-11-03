@@ -69,8 +69,10 @@ public class Deck
      * @returns The top card of the deck (at cards index 0)
      */
     public Card dealCardFromDeck() {
-        // To be written
-        
+        int[] deck1= this.cards.get(0);
+        for(int i = 0; i <= this.cards.get(0); i++){
+            
+        }
         return null;
     }
     
