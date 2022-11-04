@@ -26,7 +26,9 @@ public class War
      * from the War flowchart you created for this game
      */
     public void runEventLoop() {
-
+        for(int i = 0; i < player1.length || player2.length;){
+            
+        }
     }
     
     /**
