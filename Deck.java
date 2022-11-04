@@ -75,8 +75,7 @@ public class Deck
         // To be written
         Card c = cards.get(0);
         cards.remove(0);
-        return c;
-        //return null;
+        return null;
     }
     
     /**
