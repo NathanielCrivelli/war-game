@@ -20,6 +20,8 @@ public class War
         deck.initializeNewDeck();
         deck.shuffle();
         Deck[] halves = deck.dealDeck();
+        Deck player1 = halves[0];
+        Deck player2 = halves[1];
         // ...then run the event loop
         this.runEventLoop();
     }
@@ -29,9 +31,17 @@ public class War
      * from the War flowchart you created for this game
      */
     public void runEventLoop() {
-        ArrayList deltList = new ArrayList();
+        ArrayList dealtList = new ArrayList();
         cards.shuffle();
-        for(int i = 0; i 
+        for(int i = 0; i <
+            if(player1[0] > player2[0]){
+                player1.addCardToDeck(player2[0]);
+            } else if (player1[0] < player2[0]){
+                player2.addCardToDeck(player1[0]);
+            } else {
+                for(int g = 0; g < 
+            }
+        
     }
     
     /**
