@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 /**
  * War game class
@@ -32,9 +33,23 @@ public class War
      * from the War flowchart you created for this game
      */
     public void runEventLoop() {
+        ArrayList dealtList = new ArrayList();
         for(int i = 0; i < player1 || player2;) {
-            dealCardFromDeck.player1[0];
-            dealCardFromDeck.player2[0];
+            player1.dealCardFromDeck;
+            player2.dealCardFromDeck;
+            if(dealtList[0] > dealtList[1]) {
+                player1.addCardToDeck;
+            } else if (dealtList[0] < dealtList[1]) {
+                player2.addCardToDeck;
+            } else if (dealtList[0] = dealtList[1]) {
+                player1.dealCardFromDeck[2];
+                player2.dealCardFromDeck[2];
+                if(dealtList[0] > dealtList[1]) {
+                    player1.addCardToDeck;
+                } else if(dealtList[0] < dealtList[1]) {
+                    player2.addCardToDeck;
+                }
+            }
         }
     }
     
