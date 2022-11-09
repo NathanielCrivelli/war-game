@@ -24,6 +24,7 @@ public class War
         Deck player2 = halves[1];
         
         
+        
         // ...then run the event loop
         this.runEventLoop();
     }
@@ -35,8 +36,8 @@ public class War
     public void runEventLoop() {
         ArrayList dealtList = new ArrayList();
         for(int i = 0; i < player1 || player2;) {
-            player1.dealCardFromDeck;
-            player2.dealCardFromDeck;
+            player1.dealCardFromDeck();
+            player2.dealCardFromDeck();
             if(dealtList[0] > dealtList[1]) {
                 player1.addCardToDeck;
             } else if (dealtList[0] < dealtList[1]) {
