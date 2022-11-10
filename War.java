@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+    import java.util.ArrayList;
 
 /**
  * War game class
@@ -13,6 +13,13 @@ public class War
      * Include your initialization here -- card decks, shuffling, etc
      * Run the event loop after you've done the initializations
      */
+    
+    private Deck player1;
+    private Deck player2;
+
+    //ArrayList dealtList1 = new ArrayList();
+    //ArrayList dealtList2 = new ArrayList();
+
     public War()
     {
         // Initializations here...
@@ -20,8 +27,8 @@ public class War
         deck.initializeNewDeck();
         deck.shuffle();
         Deck[] halves = deck.dealDeck();
-        Deck player1 = halves[0];
-        Deck player2 = halves[1];
+        player1 = halves[0];
+        player2 = halves[1];
         
         
         
@@ -34,25 +41,21 @@ public class War
      * from the War flowchart you created for this game
      */
     public void runEventLoop() {
-        ArrayList dealtList = new ArrayList();
-        for(int i = 0; i < player1 || player2;) {
+        //ArrayList dealtList = new ArrayList();
+        ArrayList dealtList1 = new ArrayList();
+        ArrayList dealtList2 = new ArrayList();
+        for(int i = 0; i < 1;i++) {
             player1.dealCardFromDeck();
             player2.dealCardFromDeck();
-            if(dealtList[0] > dealtList[1]) {
-                player1.addCardToDeck;
-            } else if (dealtList[0] < dealtList[1]) {
-                player2.addCardToDeck;
-            } else if (dealtList[0] = dealtList[1]) {
-                player1.dealCardFromDeck[2];
-                player2.dealCardFromDeck[2];
-                if(dealtList[0] > dealtList[1]) {
-                    player1.addCardToDeck;
-                } else if(dealtList[0] < dealtList[1]) {
-                    player2.addCardToDeck;
-                }
+            if(dealtList1 > dealtList2) {
+                player1.addCardToDeck(null);
+            } else if(dealtList1 < dealtList2) {
+                player2.addCardToDeck(null);
             }
+            
         }
     }
+    
     
     /**
      * The main method is called when Java starts your program
