@@ -8,6 +8,8 @@ import java.util.ArrayList;
  */
 public class War
 {
+    private Deck player1;
+    private Deck player2;
     /**
      * Constructor for the game
      * Include your initialization here -- card decks, shuffling, etc
@@ -20,8 +22,8 @@ public class War
         deck.initializeNewDeck();
         deck.shuffle();
         Deck[] halves = deck.dealDeck();
-        Deck player1 = halves[0];
-        Deck player2 = halves[1];
+        player1 = halves[0];
+        player2 = halves[1];
         // ...then run the event loop
         this.runEventLoop();
     }
@@ -31,17 +33,18 @@ public class War
      * from the War flowchart you created for this game
      */
     public void runEventLoop() {
-        ArrayList dealtList = new ArrayList();
-        cards.shuffle();
-        for(int i = 0; i <
-            if(player1[0] > player2[0]){
-                player1.addCardToDeck(player2[0]);
-            } else if (player1[0] < player2[0]){
-                player2.addCardToDeck(player1[0]);
-            } else {
-                for(int g = 0; g < 
+        ArrayList deltList = new ArrayList();
+        for(int i = 0; i < i; i++){
+            deltList.add(player1.dealCardFromDeck());
+            deltList.add(player2.dealCardFromDeck());
+            if(deltList[0] > deltList[1]){
+                player1.addCardToDeck(deltList);
+            } else if (deltList[1] > deltList[0]){
+                player2.addCardToDeck(deltList);
+            } else if (deltList[0] == deltList[1]){
+                
             }
-        
+        }
     }
     
     /**
