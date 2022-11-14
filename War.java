@@ -1,4 +1,5 @@
-    import java.util.ArrayList;
+    import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 /**
  * War game class
@@ -42,19 +43,22 @@ public class War
      */
     public void runEventLoop() {
         //ArrayList dealtList = new ArrayList();
-        ArrayList dealtList1 = new ArrayList();
-        ArrayList dealtList2 = new ArrayList();
+        Array dealtList = new Array();
+        int intArray[];
         for(int i = 0; i < 1;i++) {
-            player1.dealCardFromDeck();
-            player2.dealCardFromDeck();
-            if(dealtList1 > dealtList2) {
-                player1.addCardToDeck(null);
-            } else if(dealtList1 < dealtList2) {
-                player2.addCardToDeck(null);
+            dealtList.add(player1.dealCardFromDeck());
+            dealtList.add(player2.dealCardFromDeck());
+            if(dealtList[0] > dealtList[1]) {
+                player1.addCardToDeck(dealtList);
+            }
+            else if(dealtList[0] < dealtList[1]) {
+                player2.addCardToDeck(dealtList);
+            }
+                
             }
             
         }
-    }
+    
     
     
     /**
