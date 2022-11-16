@@ -34,14 +34,18 @@ public class War
      */
     public void runEventLoop() {
         ArrayList deltList = new ArrayList();
-        for(int i = 0; i < i; i++){
+        for(int i = 0; i < 1; i++){
             deltList.add(player1.dealCardFromDeck());
             deltList.add(player2.dealCardFromDeck());
-            if(deltList[0] > deltList[1]){
-                player1.addCardToDeck(deltList);
-            } else if (deltList[1] > deltList[0]){
-                player2.addCardToDeck(deltList);
-            } else if (deltList[0] == deltList[1]){
+            if(deltList.indexOf(0) > deltList.indexOf(1)){
+                for(int o = 0; o < deltList.size(); o++){
+                    
+                }
+            } else if (deltList.indexOf(1) > deltList.indexOf(0)){
+                for(int k = 0; k < deltList.size(); k++){
+                    
+                }
+            } else if (deltList.indexOf(0) == deltList.indexOf(1)){
                 
             }
         }
