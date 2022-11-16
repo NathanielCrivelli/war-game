@@ -32,4 +32,11 @@ public class Card
     public String getFace() {
         return this.face;
     }
+
+    public int indexOf(int i) {
+        return 0;
+    }
+
+    public void add(Card dealCardFromDeck) {
+    }
 }

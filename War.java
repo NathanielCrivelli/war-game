@@ -43,21 +43,18 @@ public class War
      */
     public void runEventLoop() {
         //ArrayList dealtList = new ArrayList();
-        Array dealtList = new Array();
-        int intArray[];
+        ArrayList dealtList = new ArrayList();
         for(int i = 0; i < 1;i++) {
             dealtList.add(player1.dealCardFromDeck());
             dealtList.add(player2.dealCardFromDeck());
-            if(dealtList[0] > dealtList[1]) {
+            if(dealtList.indexOf(0) > dealtList.indexOf(1)) {
                 player1.addCardToDeck(dealtList);
             }
-            else if(dealtList[0] < dealtList[1]) {
+            else if(dealtList.indexOf(0) < dealtList.indexOf(1)) {
                 player2.addCardToDeck(dealtList);
             }
-                
-            }
-            
-        }
+        }   
+    }
     
     
     
