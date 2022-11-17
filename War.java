@@ -1,4 +1,4 @@
-    import java.lang.reflect.Array;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -14,7 +14,7 @@ public class War
      * Include your initialization here -- card decks, shuffling, etc
      * Run the event loop after you've done the initializations
      */
-    
+
     private Deck player1;
     private Deck player2;
 
@@ -30,34 +30,31 @@ public class War
         Deck[] halves = deck.dealDeck();
         player1 = halves[0];
         player2 = halves[1];
-        
-        
-        
+
         // ...then run the event loop
         this.runEventLoop();
     }
-    
+
     /**
      * This is the game's event loop. The code in here should come
      * from the War flowchart you created for this game
      */
     public void runEventLoop() {
         //ArrayList dealtList = new ArrayList();
-        ArrayList dealtList = new ArrayList();
-        for(int i = 0; i < 1;i++) {
+        ArrayList<Card> dealtList = new ArrayList();
+        ArrayList<Card> dealtList2 = new ArrayList();
+        while (player1.getDeckSize() > 0 && player2.getDeckSize() > 0) {
+            //System.out.println("hi");
             dealtList.add(player1.dealCardFromDeck());
-            dealtList.add(player2.dealCardFromDeck());
-            if(dealtList.indexOf(0) > dealtList.indexOf(1)) {
-                player1.addCardToDeck(dealtList);
+            dealtList.add(player2.dealCardFromDeck()); 
+            for (int i = 0; i < dealtList.size(); i++){
+                System.out.print(dealtList.get(i).getRank());
+                System.out.print(", ");
             }
-            else if(dealtList.indexOf(0) < dealtList.indexOf(1)) {
-                player2.addCardToDeck(dealtList);
-            }
-        }   
+            System.out.println("");
+        }
     }
-    
-    
-    
+
     /**
      * The main method is called when Java starts your program
      */
