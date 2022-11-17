@@ -33,16 +33,16 @@ public class War
      * from the War flowchart you created for this game
      */
     public void runEventLoop() {
-        ArrayList deltList = new ArrayList();
-        for(int i = 0; i < 1; i++){
+        ArrayList<Card> deltList = new ArrayList();
+        while(player1.getDeckSize() && player2.getDeckSize() > 0){
             deltList.add(player1.dealCardFromDeck());
             deltList.add(player2.dealCardFromDeck());
             if(deltList.indexOf(0) > deltList.indexOf(1)){
-                for(int o = 0; o < deltList.size(); o++){
+                for(int o = 0; o < deltList.size(); o++) {
                     
                 }
             } else if (deltList.indexOf(1) > deltList.indexOf(0)){
-                for(int k = 0; k < deltList.size(); k++){
+                for(int k = 0; k < deltList.size(); k++) {
                     
                 }
             } else if (deltList.indexOf(0) == deltList.indexOf(1)){
