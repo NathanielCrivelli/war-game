@@ -46,11 +46,17 @@ public class War
         while (player1.getDeckSize() > 0 && player2.getDeckSize() > 0) {
             //System.out.println("hi");
             dealtList.add(player1.dealCardFromDeck());
-            dealtList.add(player2.dealCardFromDeck()); 
+            dealtList.add(player2.dealCardFromDeck());
+            // int i = 0;
+            if(dealtList.getRank() == dealtList2.getRank()) {
+                 System.out.println("hi");
+            
+            } 
             for (int i = 0; i < dealtList.size(); i++){
-                System.out.print(dealtList.get(i).getRank());
-                System.out.print(", ");
-            }
+                 System.out.print(dealtList.get(i).getRank());
+                 System.out.print(", ");
+                    player1.addCardToDeck();
+            }   
             System.out.println("");
         }
     }
