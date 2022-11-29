@@ -61,7 +61,7 @@ public class War
                 war1.add(card1);
                 war2.add(card2);
                 while (card1.getRank() == card2.getRank()) {
-                    for (int i = 0; i < 3; i++) {
+                    for (int i = 2; i < 0; i--) {
                         if (player1.getDeckSize() > 0) {
                             war1.add(player1.dealCardFromDeck());
                         }
@@ -69,32 +69,28 @@ public class War
                             war2.add(player2.dealCardFromDeck());
                         }
                     }
-                    // if (player1.getDeckSize() <= 0) {
-                    //     card1 = player1.dealCardFromDeck();
-                    //     war1.add(card1);
-                    //     System.out.println("P1 Loser");
-                    // }   
-                    // if (player2.getDeckSize() <= 0) {
-                    //     card2 = player2.dealCardFromDeck();
-                    //     war2.add(card2);
-                    //     System.out.println("P2 Loser");
-                    // }
+                    for(int i = 0; i < 1; i++) {
+                        System.out.println("WAR");
+                        if (player1.getDeckSize() > 0) {
+                            war1.add(player1.dealCardFromDeck());
+                        }
+                        if (player2.getDeckSize() > 0) {
+                            war2.add(player2.dealCardFromDeck());
+                        }
+                        if(card1.getRank() > card2.getRank()) {
+                            player1.addCardToDeck(card1);
+                            player1.addCardToDeck(card2);
+
+                        }
+                        if(card1.getRank() < card2.getRank()) {
+                            player2.addCardToDeck(card1);
+                            player2.addCardToDeck(card2);
+                        }
+                    }
+                    break;
+                    
                 }
-                if (card1.getRank() > card2.getRank()) {
-                    for (int i = 0; i < war1.size(); i++) {
-                        player1.addCardToDeck(war1.get(i));
-                    }
-                    for (int i = 0; i < war2.size(); i++) {
-                        player1.addCardToDeck(war2.get(i));
-                    }
-                } else if (card1.getRank() < card2.getRank()) {
-                    for (int i = 0; i < war1.size(); i++) {
-                        player2.addCardToDeck(war1.get(i));
-                    }
-                    for (int i = 0; i < war2.size(); i++) {
-                        player2.addCardToDeck(war2.get(i));
-                    }
-                }
+                
                 if (player1.getDeckSize() <= 0) {
                     card1 = player1.dealCardFromDeck();
                     war1.add(card1);
