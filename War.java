@@ -61,67 +61,50 @@ public class War
                 // war1.add(card1);
                 // war2.add(card2);
                 if(card1.getRank() == card2.getRank()) {
-                    // Card first1 = player1.dealCardFromDeck();
-                    // Card first2 = player1.dealCardFromDeck();
-                    // Card second1 = player1.dealCardFromDeck();
-                    // Card second2 = player1.dealCardFromDeck();
+                    Card first1 = player1.dealCardFromDeck();
+                    Card first2 = player1.dealCardFromDeck();
+                    Card second1 = player1.dealCardFromDeck();
+                    Card second2 = player1.dealCardFromDeck();
                         System.out.println("WAR");
                         Card third1 = player1.dealCardFromDeck();
                         Card third2 = player2.dealCardFromDeck();
                         if(third1.getRank() > third2.getRank()) {
                             player1.addCardToDeck(card1);
                             player1.addCardToDeck(card2);
-                            // player1.addCardToDeck(first1);
-                            // player1.addCardToDeck(first2);
-                            // player1.addCardToDeck(second1);
-                            // player1.addCardToDeck(second2);
+                            player1.addCardToDeck(first1);
+                            player1.addCardToDeck(first2);
+                            player1.addCardToDeck(second1);
+                            player1.addCardToDeck(second2);
                             player1.addCardToDeck(third1);
                             player1.addCardToDeck(third2);
                             System.out.println("This is p1");
                             System.out.println("pog");
                             System.out.println("P1: " + player1.getDeckSize());
                             System.out.println("P2: " + player2.getDeckSize());
+                            System.out.println("P1 has won the war");
                         } else if(third1.getRank() < third2.getRank()) {
                             player2.addCardToDeck(card1);
                             player2.addCardToDeck(card2);
-                            // player2.addCardToDeck(first1);
-                            // player2.addCardToDeck(first2);
-                            // player2.addCardToDeck(second1);
-                            // player2.addCardToDeck(second2);
+                            player2.addCardToDeck(first1);
+                            player2.addCardToDeck(first2);
+                            player2.addCardToDeck(second1);
+                            player2.addCardToDeck(second2);
                             player2.addCardToDeck(third1);
                             player2.addCardToDeck(third2);
                             System.out.println("This is p2");
                             System.out.println("pog");
                             System.out.println("P1: " + player1.getDeckSize());
                             System.out.println("P2: " + player2.getDeckSize());
+                            System.out.println("P2 has won the war");
                             
                         }
-                        //System.out.println(card1);
-                        //System.out.println(card2);
-                    
-                    if(card1.getRank() > card2.getRank()) {
-                        player1.addCardToDeck(card1);
-                        player1.addCardToDeck(card2);
-                        System.out.println("pog");
-                    }
-                    if(card1.getRank() < card2.getRank()) {
-                        player2.addCardToDeck(card1);
-                        player2.addCardToDeck(card2);
-                        System.out.println("pog");
-                    }
-                    break;
                 }
-
-                // if (player1.getDeckSize() <= 0) {
-                //     card1 = player1.dealCardFromDeck();
-                //     war1.add(card1);
-                //     System.out.println("P1 Loser");
-                // }
-                // if (player2.getDeckSize() <= 0) {
-                //     card2 = player2.dealCardFromDeck();
-                //     war2.add(card2);
-                //     System.out.println("P2 Loser");
-                // }
+            }
+            if (player1.getDeckSize() <= 0) {
+                System.out.println("P1 Loser");
+            }
+            if (player2.getDeckSize() <= 0) {
+                System.out.println("P2 Loser");
             }
         }
     }
