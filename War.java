@@ -46,12 +46,16 @@ public class War
             if (card1.getRank() > card2.getRank()) {
                 player1.addCardToDeck(card1);
                 player1.addCardToDeck(card2);
+                player1.shuffle();
+                player2.shuffle();
                 System.out.println("P1 won round");
                 System.out.println("P1: " + player1.getDeckSize());
                 System.out.println("P2: " + player2.getDeckSize());
             } else if (card1.getRank() < card2.getRank()) {
                 player2.addCardToDeck(card1);
                 player2.addCardToDeck(card2);
+                player1.shuffle();
+                player2.shuffle();
                 System.out.println("P2 won round");
                 System.out.println("P1: " + player1.getDeckSize());
                 System.out.println("P2: " + player2.getDeckSize());
@@ -77,6 +81,8 @@ public class War
                             player1.addCardToDeck(second2);
                             player1.addCardToDeck(third1);
                             player1.addCardToDeck(third2);
+                            player1.shuffle();
+                            player2.shuffle();
                             System.out.println("This is p1");
                             System.out.println("pog");
                             System.out.println("P1: " + player1.getDeckSize());
@@ -91,6 +97,8 @@ public class War
                             player2.addCardToDeck(second2);
                             player2.addCardToDeck(third1);
                             player2.addCardToDeck(third2);
+                            player1.shuffle();
+                            player2.shuffle();
                             System.out.println("This is p2");
                             System.out.println("pog");
                             System.out.println("P1: " + player1.getDeckSize());
