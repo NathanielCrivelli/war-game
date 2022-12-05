@@ -40,10 +40,19 @@ public class War
      * from the War flowchart you created for this game
      */
     public void runEventLoop() {
-        try{
+        try{ 
             while (player1.getDeckSize() > 0 && player2.getDeckSize() > 0) {
+                //set up cards
                 Card card1 = player1.dealCardFromDeck();
                 Card card2 = player2.dealCardFromDeck();
+                //war cards
+                Card first1;
+                Card first2;
+                Card second1;
+                Card second2;
+                Card third1;
+                Card third2;
+                //check who wins round
                 if (card1.getRank() > card2.getRank()) {
                     player1.addCardToDeck(card1);
                     player1.addCardToDeck(card2);
@@ -61,19 +70,21 @@ public class War
                     System.out.println("P1: " + player1.getDeckSize());
                     System.out.println("P2: " + player2.getDeckSize());
                 } else {
-                    // ArrayList<Card> war1 = new ArrayList<Card>();
-                    // ArrayList<Card> war2 = new ArrayList<Card>();
-                    // war1.add(card1);
-                    // war2.add(card2);
+                    //deal 3 cards per player for war
+                    first1 = player1.dealCardFromDeck();
+                    first2 = player1.dealCardFromDeck();
+                    second1 = player1.dealCardFromDeck();
+                    second2 = player1.dealCardFromDeck();
+                    third1 = player1.dealCardFromDeck();
+                    third2 = player2.dealCardFromDeck();
+
+                    //check if its a war
                     if(card1.getRank() == card2.getRank()) {
-                        Card first1 = player1.dealCardFromDeck();
-                        Card first2 = player1.dealCardFromDeck();
-                        Card second1 = player1.dealCardFromDeck();
-                        Card second2 = player1.dealCardFromDeck();
+                        //announce war
                         System.out.println("WAR");
-                        Card third1 = player1.dealCardFromDeck();
-                        Card third2 = player2.dealCardFromDeck();
+                        //check which 3rd card is greater
                         if(third1.getRank() > third2.getRank()) {
+                            //add played cards to winner
                             player1.addCardToDeck(card1);
                             player1.addCardToDeck(card2);
                             player1.addCardToDeck(first1);
@@ -82,14 +93,15 @@ public class War
                             player1.addCardToDeck(second2);
                             player1.addCardToDeck(third1);
                             player1.addCardToDeck(third2);
+                            //shuffle deck to avoid infinite loop
                             player1.shuffle();
                             player2.shuffle();
                             System.out.println("This is p1");
-                            System.out.println("pog");
                             System.out.println("P1: " + player1.getDeckSize());
                             System.out.println("P2: " + player2.getDeckSize());
                             System.out.println("P1 has won the war");
                         } else if(third1.getRank() < third2.getRank()) {
+                            //add played cards to winner
                             player2.addCardToDeck(card1);
                             player2.addCardToDeck(card2);
                             player2.addCardToDeck(first1);
@@ -98,14 +110,15 @@ public class War
                             player2.addCardToDeck(second2);
                             player2.addCardToDeck(third1);
                             player2.addCardToDeck(third2);
+                            //shuffle cards to avoid infinite loop
                             player1.shuffle();
                             player2.shuffle();
                             System.out.println("This is p2");
-                            System.out.println("pog");
                             System.out.println("P1: " + player1.getDeckSize());
                             System.out.println("P2: " + player2.getDeckSize());
                             System.out.println("P2 has won the war");
-                        } else if(third1 == third2){
+                        } else {
+                            //third card played in a war were equal. No winner
                             player1.addCardToDeck(card1);
                             player2.addCardToDeck(card2);
                             player1.addCardToDeck(first1);
@@ -115,37 +128,39 @@ public class War
                             player1.addCardToDeck(third1);
                             player2.addCardToDeck(third2);
                             System.out.println("TIE");
+                            continue;
                         }
                     }
-                }
+                    //catch errors when a war happens at low amount of cards.
+                    //At low amount of cards index may go out of bounds when dealing cards
 
+                    //check if 1 player is out of cards
+
+                }
                 if (player1.getDeckSize() <= 0) {
                     System.out.println("P1 Loser");
                 }
                 if (player2.getDeckSize() <= 0) {
                     System.out.println("P2 Loser");
                 }
-
-            }   
-        } catch(Exception IndexOutOfBoundsException){
-            if(player1.getDeckSize() == 0){
+            }
+        }catch(Exception IndexOutOfBoundsException){
+            if(player1.getDeckSize() <= 0){
+                //continue the normal war process
                 System.out.println("P2 has won the war");
-                System.out.println("P1: "+player1.getDeckSize());
-                System.out.println("P2: "+player2.getDeckSize());
                 System.out.println("P1 Loser");
-            } else if(player2.getDeckSize() == 0){
+            } else if(player2.getDeckSize() <= 0){
+                //continue the normal war process
                 System.out.println("P1 has own the war");
-                System.out.println("P1: "+player1.getDeckSize());
-                System.out.println("P2: "+player2.getDeckSize());
                 System.out.println("P2 Loser");
             }
         }
     }
-        /**
-         * The main method is called when Java starts your program
-         */
-        public static void main(String[] args) {
+
+    /**
+     * The main method is called when Java starts your program
+     */
+    public static void main(String[] args) {
         War war = new War();
     }
-
 }
