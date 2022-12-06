@@ -138,6 +138,7 @@ public class War
                         }
                     }
                 }
+                //check if a player is out of cards to deteremine if they have lost
                 if (player1.getDeckSize() <= 0) {
                     System.out.println("P1 Loser");
                 }
@@ -147,13 +148,13 @@ public class War
             }
         }catch(Exception IndexOutOfBoundsException){
             if(player1.getDeckSize() <= 0){
-                //continue the normal war process
+                //declare loser if they war to end the game
                 System.out.println("P2 has won the war");
                 System.out.println("P1: 0");
                 System.out.println("P2: 52");
                 System.out.println("P1 Loser");
             } else if(player2.getDeckSize() <= 0){
-                //continue the normal war pr
+                //declare loser if they war to end the game
                 System.out.println("P1 has own the war");
                 System.out.println("P1: 0");
                 System.out.println("P2: 52");
