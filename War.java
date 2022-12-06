@@ -17,6 +17,7 @@ public class War
 
     private Deck player1;
     private Deck player2;
+    private ArrayList<Card> WarList = new ArrayList<Card>();
 
     //ArrayList dealtList1 = new ArrayList();
     //ArrayList dealtList2 = new ArrayList();
@@ -33,6 +34,11 @@ public class War
 
         // ...then run the event loop
         this.runEventLoop();
+    }
+
+    public Card position(int pos) {
+        Card c = WarList.get(pos);
+        return c;
     }
 
     /**
@@ -72,9 +78,9 @@ public class War
                 } else {
                     //deal 3 cards per player for war
                     first1 = player1.dealCardFromDeck();
-                    first2 = player1.dealCardFromDeck();
+                    first2 = player2.dealCardFromDeck();
                     second1 = player1.dealCardFromDeck();
-                    second2 = player1.dealCardFromDeck();
+                    second2 = player2.dealCardFromDeck();
                     third1 = player1.dealCardFromDeck();
                     third2 = player2.dealCardFromDeck();
 
@@ -131,11 +137,6 @@ public class War
                             continue;
                         }
                     }
-                    //catch errors when a war happens at low amount of cards.
-                    //At low amount of cards index may go out of bounds when dealing cards
-
-                    //check if 1 player is out of cards
-
                 }
                 if (player1.getDeckSize() <= 0) {
                     System.out.println("P1 Loser");
@@ -148,10 +149,14 @@ public class War
             if(player1.getDeckSize() <= 0){
                 //continue the normal war process
                 System.out.println("P2 has won the war");
+                System.out.println("P1: 0");
+                System.out.println("P2: 52");
                 System.out.println("P1 Loser");
             } else if(player2.getDeckSize() <= 0){
-                //continue the normal war process
+                //continue the normal war pr
                 System.out.println("P1 has own the war");
+                System.out.println("P1: 0");
+                System.out.println("P2: 52");
                 System.out.println("P2 Loser");
             }
         }
