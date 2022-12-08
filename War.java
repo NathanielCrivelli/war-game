@@ -19,9 +19,6 @@ public class War
     private Deck player2;
     private ArrayList<Card> WarList = new ArrayList<Card>();
 
-    //ArrayList dealtList1 = new ArrayList();
-    //ArrayList dealtList2 = new ArrayList();
-
     public War()
     {
         // Initializations here...
@@ -34,11 +31,6 @@ public class War
 
         // ...then run the event loop
         this.runEventLoop();
-    }
-
-    public Card position(int pos) {
-        Card c = WarList.get(pos);
-        return c;
     }
 
     /**
@@ -60,16 +52,24 @@ public class War
                 Card third2;
                 //check who wins round
                 if (card1.getRank() > card2.getRank()) {
+                    //add cards to winner
+                    System.out.println("P1: " + card1.getFace()+ " of " +card1.getSuit());
+                    System.out.println("P2: " + card2.getFace()+ " of " +card2.getSuit());
                     player1.addCardToDeck(card1);
                     player1.addCardToDeck(card2);
+                    //shuffle deck to avoid infinite loop
                     player1.shuffle();
                     player2.shuffle();
                     System.out.println("P1 won round");
                     System.out.println("P1: " + player1.getDeckSize());
                     System.out.println("P2: " + player2.getDeckSize());
                 } else if (card1.getRank() < card2.getRank()) {
+                    //add cards to winner
+                    System.out.println("P1: " + card1.getFace()+ " of " +card1.getSuit());
+                    System.out.println("P1: " + card2.getFace()+ " of " +card2.getSuit());
                     player2.addCardToDeck(card1);
                     player2.addCardToDeck(card2);
+                    //shuffle deck to avoid infinite loop
                     player1.shuffle();
                     player2.shuffle();
                     System.out.println("P2 won round");
@@ -91,6 +91,14 @@ public class War
                         //check which 3rd card is greater
                         if(third1.getRank() > third2.getRank()) {
                             //add played cards to winner
+                            System.out.println("P1: " + card1.getFace()+ " of " +card1.getSuit());
+                            System.out.println("P1: " + first1.getFace()+ " of " +first1.getSuit());
+                            System.out.println("P1: " + second1.getFace()+ " of " +second1.getSuit());
+                            System.out.println("P1: " + third1.getFace()+ " of " +third1.getSuit());
+                            System.out.println("P2: " + card2.getFace()+ " of " +card2.getSuit());
+                            System.out.println("P2: " + first2.getFace()+ " of " +first2.getSuit());
+                            System.out.println("P2: " + second2.getFace()+ " of " +second2.getSuit());
+                            System.out.println("P2: " + third2.getFace()+ " of " +third2.getSuit());
                             player1.addCardToDeck(card1);
                             player1.addCardToDeck(card2);
                             player1.addCardToDeck(first1);
@@ -102,12 +110,19 @@ public class War
                             //shuffle deck to avoid infinite loop
                             player1.shuffle();
                             player2.shuffle();
-                            System.out.println("This is p1");
                             System.out.println("P1: " + player1.getDeckSize());
                             System.out.println("P2: " + player2.getDeckSize());
                             System.out.println("P1 has won the war");
                         } else if(third1.getRank() < third2.getRank()) {
                             //add played cards to winner
+                            System.out.println("P1: " + card1.getFace()+ " of " +card1.getSuit());
+                            System.out.println("P1: " + first1.getFace()+ " of " +first1.getSuit());
+                            System.out.println("P1: " + second1.getFace()+ " of " +second1.getSuit());
+                            System.out.println("P1: " + third1.getFace()+ " of " +third1.getSuit());
+                            System.out.println("P2: " + card2.getFace()+ " of " +card2.getSuit());
+                            System.out.println("P2: " + first2.getFace()+ " of " +first2.getSuit());
+                            System.out.println("P2: " + second2.getFace()+ " of " +second2.getSuit());
+                            System.out.println("P2: " + third2.getFace()+ " of " +third2.getSuit());
                             player2.addCardToDeck(card1);
                             player2.addCardToDeck(card2);
                             player2.addCardToDeck(first1);
@@ -119,7 +134,6 @@ public class War
                             //shuffle cards to avoid infinite loop
                             player1.shuffle();
                             player2.shuffle();
-                            System.out.println("This is p2");
                             System.out.println("P1: " + player1.getDeckSize());
                             System.out.println("P2: " + player2.getDeckSize());
                             System.out.println("P2 has won the war");
@@ -134,7 +148,6 @@ public class War
                             player1.addCardToDeck(third1);
                             player2.addCardToDeck(third2);
                             System.out.println("TIE");
-                            continue;
                         }
                     }
                 }
@@ -146,15 +159,18 @@ public class War
                     System.out.println("P2 Loser");
                 }
             }
+            //catch error if index goes out of bounds when war happens at 3 cards
         }catch(Exception IndexOutOfBoundsException){
             if(player1.getDeckSize() <= 0){
                 //declare loser if they war to end the game
+                System.out.println("P1 has run out of cards for a war");
                 System.out.println("P2 has won the war");
                 System.out.println("P1: 0");
                 System.out.println("P2: 52");
                 System.out.println("P1 Loser");
             } else if(player2.getDeckSize() <= 0){
                 //declare loser if they war to end the game
+                System.out.println("P2 has run out of cards for a war");
                 System.out.println("P1 has own the war");
                 System.out.println("P1: 0");
                 System.out.println("P2: 52");
